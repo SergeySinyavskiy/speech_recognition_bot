@@ -1,4 +1,4 @@
-﻿import telebot
+import telebot
 from telebot import types
 import speech_recognition as sr
 import subprocess as sp
@@ -16,7 +16,13 @@ def get_username(message):
 	uname = message.chat.username
 	if uname not in user_data:
 		user_data[uname] = 'ru-RU'
-
+		
+@bot.message_handler(commands=['stop'])
+def gremove_username(message):
+	try:
+		del user_data[message.chat.username]
+	except KeyError:
+		print("Username does not exist.")
 
 @bot.message_handler(content_types=['voice'])
 def process_voice(message):
