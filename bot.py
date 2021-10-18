@@ -6,8 +6,8 @@ import subprocess as sp
 API = '1924918182:AAGu9iSy-KESYAhHWKudYHnAbNFkW08vwc8'
 bot = telebot.TeleBot(API)
 LANGS = {'En': 'en-US',
-		 'Ru': 'ru-RU',
-		 'Ua': 'uk-UA'}
+	     'Ru': 'ru-RU',
+	     'Ua': 'uk-UA'}
 
 user_data = {}
 
