@@ -5,7 +5,6 @@ import subprocess as sp
 
 API = '1924918182:AAGu9iSy-KESYAhHWKudYHnAbNFkW08vwc8'
 bot = telebot.TeleBot(API)
-LANG = 'ru-RU'
 LANGS = {'En': 'en-US',
 		 'Ru': 'ru-RU',
 		 'Ua': 'uk-UA'}
@@ -28,7 +27,7 @@ def process_voice(message):
 		new_file.write(downloaded_file)
 	process = sp.run(['ffmpeg', '-y', '-loglevel', 'quiet', '-i', 'voice.ogg', 'voice.wav'])
 	if process.returncode != 0:
-		raise Exception('Something went wrong audio convertion.')
+		raise Exception('Something went wrong with audio convertion.')
 	with sr.AudioFile('voice.wav') as source:
 		audio = r.listen(source)
 	text = r.recognize_google(audio, language=user_data[message.chat.username])
