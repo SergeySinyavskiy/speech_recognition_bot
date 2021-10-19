@@ -19,7 +19,7 @@ def get_username(message):
 		user_data[uname] = 'ru-RU'
 		
 @bot.message_handler(commands=['stop'])
-def gremove_username(message):
+def remove_username(message):
 	try:
 		del user_data[message.chat.username]
 	except KeyError:
