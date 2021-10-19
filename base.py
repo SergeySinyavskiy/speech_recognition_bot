@@ -14,7 +14,7 @@ class Base:
 
 	def remove_user(self, user_id):
 		self.cursor.execute("delete from users where user_id = %s", (user_id,))
-		elf.conn.commit()
+		self.conn.commit()
 
 	def get_user_locale(self, user_id):
 		self.cursor.execute("select language from users where user_id = %s", (user_id,))
