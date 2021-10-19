@@ -2,8 +2,9 @@ import telebot
 from telebot import types
 import speech_recognition as sr
 import subprocess as sp
+import os
 
-API = '1924918182:AAGu9iSy-KESYAhHWKudYHnAbNFkW08vwc8'
+API = os.environ["API"]
 bot = telebot.TeleBot(API)
 LANGS = {'En': 'en-US',
 	     'Ru': 'ru-RU',
