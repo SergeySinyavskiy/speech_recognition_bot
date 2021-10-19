@@ -3,6 +3,10 @@ import mysql.connector
 class Base: 
 	def __init__(self, db_config_file):
 		self.config = db_config_file
+		
+	def __del__(self):
+		self.cursor.close()
+		self.conn.close()
 
 	def connect(self):
 		self.conn = mysql.connector.connect(option_files=self.config)
