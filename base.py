@@ -19,4 +19,5 @@ class Base:
 	def get_users_list(self):
 		
 		
-	#todo: implement methods
+	#todo: create tables for langs and users 
+	#      implement methods
