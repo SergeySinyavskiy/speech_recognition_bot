@@ -37,7 +37,7 @@ def process_voice(message):
 	with sr.AudioFile('voice.wav') as source:
 		audio = r.listen(source)
 	text = r.recognize_google(audio, language=user_data[message.chat.username])
-	print(text)
+	#print(text)
 	bot.reply_to(message, text)
 
 @bot.message_handler(commands=['change_lang'])
