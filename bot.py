@@ -6,9 +6,9 @@ import os
 
 API = os.environ["API"]
 bot = telebot.TeleBot(API)
-LANGS = {'En': 'en-US',
-	     'Ru': 'ru-RU',
-	     'Ua': 'uk-UA'}
+LANGS = {'EN': 'en-US',
+	     'RU': 'ru-RU',
+	     'UA': 'uk-UA'}
 
 user_data = {}
 
