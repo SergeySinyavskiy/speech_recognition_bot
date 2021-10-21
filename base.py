@@ -14,7 +14,7 @@ class Base:
 		self.cursor = self.conn.cursor()
 
 	def add_user(self, user_id):
-		self.cursor.execute("insert into users (user_id, language) values (%s, %s)", (user_id, 'Ru'))
+		self.cursor.execute("insert into users (user_id, language) values (%s, %s)", (user_id, 'RU'))
 		self.conn.commit()
 
 	def remove_user(self, user_id):
