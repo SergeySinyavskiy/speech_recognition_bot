@@ -59,3 +59,17 @@ def callback_process(call):
 	bot.send_message(call.message.chat.id, f'Язык изменён на {call.data}.')
 
 bot.polling(none_stop=True, interval=0)
+
+#Launch http server for listening port
+import socketserver
+PORT = int(os.environ.get('PORT'))
+from http.server import HTTPServer, BaseHTTPRequestHandler
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'No Memes Today :c')
+
+with socketserver.TCPServer(("0.0.0.0", PORT), SimpleHTTPRequestHandler) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()
